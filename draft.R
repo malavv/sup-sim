@@ -9,7 +9,7 @@ dat <- read_csv("data/table_1.csv")
 dat$total = rowSums(dat[, c(2, 3)])
 
 # R uses the IEEE 754 recommendation of "go to the even digit"
-# but SAS uses "ties away from zero"
+# but SAS uses "ties away from zero" comes from http://alandgraf.blogspot.com/2012/06/rounding-in-r.html
 sas_round = function(x, n) {
   posneg = sign(x)
   z = abs(x)*10^n
